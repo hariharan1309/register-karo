@@ -1,3 +1,4 @@
+import AboutSection from "./components/AboutSection";
 import ContactHeader from "./components/ContactHeader";
 import Hero from "./components/Hero";
 import ServiceSection from "./components/ServiceSection";
@@ -12,7 +13,7 @@ function App() {
       <Hero />
       <TrustedBusiness />
       <ServiceSection />
-      
+      <AboutSection />
     </>
   );
 }

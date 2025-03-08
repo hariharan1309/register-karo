@@ -11,7 +11,7 @@ const ServiceCard = ({ params, index }: { params: any; index: number }) => {
         {params.description}
       </p>
       <button>
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-row gap-4 items-center">
           <p className="font-semibold text-base text-[#001038]">Learn More</p>
           <svg
             width="17"
