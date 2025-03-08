@@ -1,42 +1,47 @@
 import ServiceCard from "./ServiceCard";
+import icon1 from "../assets/services/CF.png";
+import icon2 from "../assets/services/CSS.png";
+import icon3 from "../assets/services/VOA.png";
+import icon4 from "../assets/services/ACS.png";
+import icon5 from "../assets/services/PS.png";
+import icon6 from "../assets/services/BS.png";
 
 const ServiceSection = () => {
   const services = [
     {
-      icon: "/images/icons/registration.svg",
+      icon: icon1,
       title: "Company Registration",
       description:
-        "Register your company with us and get your certificate in 2 days.",
+        "Build web-based solutions that enhance customer experience.",
     },
     {
-      icon: "/images/icons/registration.svg",
-      title: "Company Registration",
+      icon: icon2,
+      title: "Company Secretarial Services",
       description:
-        "Register your company with us and get your certificate in 2 days.",
+        "Make data-driven decisions and utilize technology to reach business goals.",
     },
     {
-      icon: "/images/icons/registration.svg",
-      title: "Company Registration",
+      icon: icon3,
+      title: "Virtual Office Address",
       description:
-        "Register your company with us and get your certificate in 2 days.",
+        "Foster customer relationships by effectively serving your market.",
     },
     {
-      icon: "/images/icons/registration.svg",
-      title: "Company Registration",
+      icon: icon4,
+      title: "Annual Compliance Services",
       description:
-        "Register your company with us and get your certificate in 2 days.",
+        "Turn your ideas into modern products with our design experts.",
     },
     {
-      icon: "/images/icons/registration.svg",
-      title: "Company Registration",
-      description:
-        "Register your company with us and get your certificate in 2 days.",
+      icon: icon5,
+      title: "Payroll Services",
+      description: "Expand your business across the globe with minimal effort.",
     },
     {
-      icon: "/images/icons/registration.svg",
-      title: "Company Registration",
+      icon: icon6,
+      title: "Bookkeeping Services",
       description:
-        "Register your company with us and get your certificate in 2 days.",
+        "Steering user behaviours with creative design, data insights & technology.",
     },
   ];
   return (
@@ -47,7 +52,7 @@ const ServiceSection = () => {
       <h2 className="text-[#272D37] font-bold text-[32px] place-self-center">
         Explore Our Services
       </h2>
-      <div className="grid grid-cols-3">
+      <div className="grid grid-cols-3 p-4">
         {/* ServiceCard */}
         {services.map((service, index) => (
           <ServiceCard params={service} key={index} />
