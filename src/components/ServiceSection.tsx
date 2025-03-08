@@ -46,16 +46,16 @@ const ServiceSection = () => {
   ];
   return (
     <div className="py-10 px-18 bg-[#FAFAFA] grid grid-cols-1 gap-4">
-      <p className="text-[#EB8D15] font-inter place-self-center">
+      <p className="text-[#EB8D15] font-inter place-self-center m-1 tracking-[1.5px]">
         WELCOME TO REGISTERKARO.IN
       </p>
-      <h2 className="text-[#272D37] font-bold text-[32px] place-self-center">
+      <h2 className="text-[#272D37] font-bold text-[32px] place-self-center tracking-[.16px]">
         Explore Our Services
       </h2>
-      <div className="grid grid-cols-3 p-4">
+      <div className="grid grid-cols-3 gap-6 p-4">
         {/* ServiceCard */}
         {services.map((service, index) => (
-          <ServiceCard params={service} key={index} />
+          <ServiceCard params={service} key={index} border={index % 3 !== 0} />
         ))}
       </div>
     </div>

@@ -1,9 +1,13 @@
-const ServiceCard = ({ params }: { params: any }) => {
+const ServiceCard = ({ params, border }: { params: any; border: boolean }) => {
   return (
-    <div className="flex flex-col items-center justify-center gap-7 p-6 *:font-inter">
+    <div
+      className={`flex flex-col items-center justify-center gap-7 p-6 *:font-inter ${
+        border ? " border-l-[1px] " : ""
+      }`}
+    >
       <img src={params.icon} alt="icon" className="size-[60px]" />
-      <h3 className=" font-extrabold text-[20px]">{params.title}</h3>
-      <p className=" font-inter text-center max-w-[280px]">
+      <h3 className=" font-extrabold text-[20px] leadi">{params.title}</h3>
+      <p className=" font-inter text-center text-lg text-[#282728] max-w-[280px] leading-6 font-light">
         {params.description}
       </p>
       <button>
