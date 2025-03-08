@@ -1,4 +1,5 @@
 import ContactHeader from "./components/ContactHeader";
+import Hero from "./components/Hero";
 import StickyHeader from "./components/StickyHeader";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <>
       <ContactHeader />
       <StickyHeader />
+      <Hero />
     </>
   );
 }

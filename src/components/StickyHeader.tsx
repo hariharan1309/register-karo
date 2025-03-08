@@ -62,7 +62,7 @@ const StickyHeader = () => {
             />
           </svg>
         </div>
-        <button className="w-[156px] h-[46px] flex items-center justify-center  font-bold text-white bg-[#FFA229] rounded ">
+        <button className="w-[156px] h-[46px] flex items-center justify-center text-base font-bold text-white bg-[#FFA229] rounded ">
           Talk An Expert
         </button>
       </div>
