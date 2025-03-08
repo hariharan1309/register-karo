@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import ServiceSection from "./components/ServiceSection";
 import StickyHeader from "./components/StickyHeader";
 import TrustedBusiness from "./components/TrustedBusiness";
+import WhySection from "./components/WhySection";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <TrustedBusiness />
       <ServiceSection />
       <AboutSection />
+      <WhySection />
     </>
   );
 }

@@ -9,7 +9,7 @@ const AboutSection = () => {
         <p className="text-[#EB8D15] font-inter tracking-[1.5px]">
           WELCOME TO REGISTERKARO.IN
         </p>
-        <h3 className="text-[32px] font-bold">
+        <h3 className="text-[32px] font-bold text-[#272D37]">
           About <span className="text-[#EB8D15]">Register Karo</span>
         </h3>
         <p className="text-base leading-6 tracking-wide text-[#0D1216]">
@@ -51,7 +51,11 @@ const AboutSection = () => {
         alt=""
         className="-z-10 absolute right-3 bottom-[68px] w-[130px]"
       />
-      <img src={Curve} alt="" className="absolute h-[500px] top-[30px] right-0" />
+      <img
+        src={Curve}
+        alt=""
+        className="absolute h-[500px] top-[30px] right-0"
+      />
     </div>
   );
 };
