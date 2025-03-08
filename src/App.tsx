@@ -12,6 +12,7 @@ function App() {
       <Hero />
       <TrustedBusiness />
       <ServiceSection />
+      
     </>
   );
 }

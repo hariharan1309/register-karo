@@ -1,8 +1,8 @@
-const ServiceCard = ({ params, border }: { params: any; border: boolean }) => {
+const ServiceCard = ({ params, index }: { params: any; index: number }) => {
   return (
     <div
-      className={`flex flex-col items-center justify-center gap-7 p-6 *:font-inter ${
-        border ? " border-l-[1px] " : ""
+      className={` relative flex flex-col items-center justify-center gap-7 p-6 *:font-inter ${
+        index % 3 !== 0 ? " border-l-[1px] border-[#E5E2DF] " : ""
       }`}
     >
       <img src={params.icon} alt="icon" className="size-[60px]" />
@@ -27,6 +27,13 @@ const ServiceCard = ({ params, border }: { params: any; border: boolean }) => {
           </svg>
         </div>
       </button>
+      {index % 3 !== 0 && (
+        <div
+          className={`absolute bg-[#BB162B] h-5 w-1 left-[-2px] ${
+            index % 3 == 1 ? " top-1/4" : "top-3/4"
+          }`}
+        ></div>
+      )}
     </div>
   );
 };
