@@ -1,7 +1,7 @@
 import Stats from "../assets/GoogleStats.png";
 const HeroGoogle = () => {
   return (
-    <div className=" space-y-6 max-w-[700px]">
+    <div className=" space-y-6 max-w-[700px] pb-8">
       <div className="flex flex-row gap-1 items-center">
         <svg
           width="20"
@@ -32,11 +32,12 @@ const HeroGoogle = () => {
           <HeroStar key={item} />
         ))}
       </div>
-      <h1 className="text-wrap font-inter max-w-[700px] text-5xl font-medium text-[#010101] leading-[60px]">
-        Your trusted partner for compliance business needs
+      <h1 className="text-wrap font-inter max-w-[700px] font-extrabold text-5xl text-[#010101] leading-[60px]">
+        Your Trusted Partner For{" "}
+        <span className="text-[#FFA229]">Compliance</span> needs
       </h1>
       <div className="bg-[#F60014] h-[1px] w-10"></div>
-      <p className="text-xl leading-[28px] text-[#4F4F4F]  max-w-[660px]">
+      <p className="text-xl leading-[28px] text-[#4F4F4F]">
         An online business compliance platform that helps entrepreneurs and
         other individuals with various <b> registrations</b>
         <b>, tax filings,</b> and other
@@ -68,8 +69,8 @@ const HeroGoogle = () => {
         <img src={Stats} alt="" className="w-[584px]" />
       </div>
       <div className="flex flex-row items-center gap-4">
-        <button className="font-inter text-base w-[156px] h-[46px] flex items-center justify-center  font-bold text-white bg-[#1C4670] rounded ">
-          Talk An Expert
+        <button className="font-inter text-base p-4 px-6 flex items-center justify-center  font-bold text-white bg-[#1C4670] rounded ">
+          Get Started For Free
         </button>
         <div className=" flex flex-row items-center gap-4">
           <svg
