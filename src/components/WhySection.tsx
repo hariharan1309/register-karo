@@ -1,3 +1,5 @@
+import WhyCard from "./WhyCard";
+
 const WhySection = () => {
   const reasons = [
     {
@@ -94,13 +96,13 @@ const WhySection = () => {
           />
         </svg>
       ),
-      color: "rgba(39, 174, 96, 0.04)",
+      color: "#FFFFFF",
       title: "Confidential & Safe",
       description: "All your private information is safe with us",
     },
   ];
   return (
-    <div className="grid grid-cols-4 p-16 *:font-inter relative">
+    <div className="grid grid-cols-4 gap-6 p-16 *:font-inter relative">
       <div className="col-span-2 grid grid-cols-1 gap-3">
         <p className="text-[#EB8D15] font-inter tracking-[1.5px]">
           WELCOME TO REGISTERKARO.IN
@@ -113,6 +115,13 @@ const WhySection = () => {
           people and that in turn help us to serve the business better.
         </p>
       </div>
+      <WhyCard params={reasons[0]} key={reasons[0].title} />
+      <WhyCard params={reasons[1]} key={reasons[1].title} />
+      <div className="col-start-2">
+        <WhyCard params={reasons[2]} key={reasons[2].title} />
+      </div>
+      <WhyCard params={reasons[3]} key={reasons[3].title} />
+      <WhyCard params={reasons[4]} key={reasons[4].title} />
     </div>
   );
 };
