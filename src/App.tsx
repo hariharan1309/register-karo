@@ -1,6 +1,7 @@
 import AboutSection from "./components/AboutSection";
 import BlogSection from "./components/BlogSection";
 import ContactHeader from "./components/ContactHeader";
+import FAQSection from "./components/FQASection";
 import HappyClients from "./components/HappyClients";
 import Hero from "./components/Hero";
 import Options from "./components/Options";
@@ -24,6 +25,7 @@ function App() {
       <HappyClients />
       <Options />
       <BlogSection />
+      <FAQSection />
     </>
   );
 }
