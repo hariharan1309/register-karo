@@ -1,5 +1,6 @@
 import AboutSection from "./components/AboutSection";
 import ContactHeader from "./components/ContactHeader";
+import HappyClients from "./components/HappyClients";
 import Hero from "./components/Hero";
 import ServiceSection from "./components/ServiceSection";
 import StickyHeader from "./components/StickyHeader";
@@ -19,6 +20,7 @@ function App() {
       <AboutSection />
       <WhySection />
       <ViewSection />
+      <HappyClients />
     </>
   );
 }
