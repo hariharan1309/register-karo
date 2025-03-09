@@ -1,8 +1,9 @@
-import React from "react";
+import Img1 from "../assets/blog/B1.png";
 
-interface Tag {
-  text: string;
-}
+import Img2 from "../assets/blog/B2.png";
+import Img4 from "../assets/blog/B4.png";
+import Img5 from "../assets/blog/B5.png";
+import Img6 from "../assets/blog/B6.png";
 
 interface Blog {
   author: string;
@@ -58,8 +59,8 @@ const TagPill: React.FC<TagPillProps> = ({ text }) => {
 
 const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
   return (
-    <div className="flex flex-col h-full rounded-lg overflow-hidden shadow-sm border border-gray-200 transition-all duration-300 hover:shadow-md">
-      <div className="h-48 overflow-hidden">
+    <div className="flex flex-col gap-6 h-full *:font-inter transition-all duration-300 hover:shadow-md w-96">
+      <div className="h-60 overflow-hidden">
         <img
           src={blog.image}
           alt={blog.title}
@@ -67,21 +68,21 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
         />
       </div>
 
-      <div className="flex flex-col flex-grow p-5">
-        <div className="mb-2 flex items-center text-gray-500 text-sm">
+      <div className="flex flex-col gap-6 flex-grow font-semibold">
+        <div className=" flex items-center text-[#667085] text-sm">
           <span>{blog.author}</span>
           <span className="mx-1">•</span>
           <span>{blog.date}</span>
           {blog.label && (
             <>
               <span className="mx-1">•</span>
-              <span className="text-blue-600">{blog.label}</span>
+              <span className="">{blog.label}</span>
             </>
           )}
         </div>
 
-        <div className="flex justify-between items-start mb-2">
-          <h3 className="text-xl font-bold text-gray-900">{blog.title}</h3>
+        <div className="flex justify-between items-start">
+          <h3 className="text-[22px] font-bold text-[#1A1A1A]">{blog.title}</h3>
           <svg
             width="24"
             height="24"
@@ -99,7 +100,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
           </svg>
         </div>
 
-        <p className="text-gray-600 mb-4 flex-grow">{blog.description}</p>
+        <p className="text-[#667085] text-[15px] flex-grow font-normal">{blog.description}</p>
 
         <div className="flex flex-wrap gap-2 mt-auto">
           {blog.tags.map((tag, i) => (
@@ -121,7 +122,7 @@ const BlogSection: React.FC = () => {
       description:
         "Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?",
       tags: ["Tax & Audit", "Management"],
-      image: "/images/business1.jpg",
+      image: Img1,
     },
     {
       author: "Mahesh Kumar",
@@ -130,7 +131,7 @@ const BlogSection: React.FC = () => {
       description:
         "Mental models are simple expressions of complex processes or relationships.",
       tags: ["Tax", "Research", "Complience"],
-      image: "/images/business2.jpg",
+      image: Img2,
     },
     {
       author: "Rakhi Verma",
@@ -139,7 +140,7 @@ const BlogSection: React.FC = () => {
       description:
         "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
       tags: ["Audit", "Money Back"],
-      image: "/images/business3.jpg",
+      image: Img1,
     },
     {
       author: "Karan Kumar",
@@ -148,7 +149,7 @@ const BlogSection: React.FC = () => {
       description:
         "Collaboration can make our teams stronger, and our individual designs better.",
       tags: ["Money", "Management"],
-      image: "/images/business4.jpg",
+      image: Img4,
     },
     {
       author: "Richa Singh",
@@ -157,7 +158,7 @@ const BlogSection: React.FC = () => {
       description:
         "JavaScript frameworks make development easy with extensive features and functionalities.",
       tags: ["Tax Return", "News", "Audit"],
-      image: "/images/business5.jpg",
+      image: Img5,
     },
     {
       author: "Miss Nora",
@@ -166,7 +167,7 @@ const BlogSection: React.FC = () => {
       description:
         "Starting a community doesn't need to be complicated, but how do you get started?",
       tags: ["Private Limited Company", "Customer Success"],
-      image: "/images/business6.jpg",
+      image: Img6,
     },
   ];
 
@@ -181,7 +182,7 @@ const BlogSection: React.FC = () => {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+      <div className="grid grid-cols-3 *:place-self-center gap-8 p-8">
         {blogs.map((blog, index) => (
           <BlogCard key={index} blog={blog} />
         ))}
