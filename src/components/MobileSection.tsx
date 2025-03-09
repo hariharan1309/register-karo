@@ -2,7 +2,7 @@ import React from "react";
 import Phone from "../assets/Phone1.png";
 const MobileAppSection: React.FC = () => {
   return (
-    <div className="bg-[#1C4670] py-16 px-4 md:px-8 lg:px-16 relative overflow-hidden">
+    <div className="bg-[#1C4670] py-16 px-4 md:px-8 lg:px-16 relative overflow-hidden *:font-inter">
       <div className="flex flex-row">
         <div className="max-w-[500px] mb-8">
           <h2 className="text-[32px] font-[750] leading-10 text-white mb-6">

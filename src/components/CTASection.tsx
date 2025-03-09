@@ -20,7 +20,7 @@ const CTASection: React.FC = () => {
   return (
     <section className="relative">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-amber-400 via-amber-500 to-blue-900 z-0"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(96.22deg,#FFA229_9%,#1C4670_59.37%)] z-0"></div>
 
       <div className="relative z-10 py-16 px-4 max-w-6xl mx-auto">
         <div className="text-center mb-8">
