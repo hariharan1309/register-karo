@@ -1,4 +1,3 @@
-import React from "react";
 import Img1 from "../assets/clients/coinbase.png";
 import Img2 from "../assets/clients/spotify.png";
 import Img3 from "../assets/clients/slack.png";

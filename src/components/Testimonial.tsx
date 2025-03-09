@@ -184,7 +184,7 @@ const TestimonialSection: React.FC = () => {
                 transform: `translateX(-${currentIndex * (100 / 2.5)}%)`,
               }}
             >
-              {testimonials.map((testimonial, index) => (
+              {testimonials.map((testimonial,) => (
                 <div
                   key={testimonial.id}
                   className="w-[40%] flex-shrink-0 px-2"
