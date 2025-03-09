@@ -1,7 +1,7 @@
 import Clients from "../assets/Clients.png";
 const HappyClients = () => {
   return (
-    <div className="grid grid-cols-1">
+    <div className="grid grid-cols-1 pb-14">
       <div className="p-14 flex flex-col gap-3 items-center justify-center mx-auto max-w-[800px]">
         <h2 className="font-inter text-[32px] text-[#272D37] text-base leading-10 font-bold">
           Our Happy Clients
