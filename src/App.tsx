@@ -2,6 +2,7 @@ import AboutSection from "./components/AboutSection";
 import ContactHeader from "./components/ContactHeader";
 import HappyClients from "./components/HappyClients";
 import Hero from "./components/Hero";
+import Options from "./components/Options";
 import ServiceSection from "./components/ServiceSection";
 import StickyHeader from "./components/StickyHeader";
 import TrustedBusiness from "./components/TrustedBusiness";
@@ -21,6 +22,7 @@ function App() {
       <WhySection />
       <ViewSection />
       <HappyClients />
+      <Options />
     </>
   );
 }
