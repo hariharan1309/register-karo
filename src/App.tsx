@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import FAQSection from "./components/FQASection";
 import HappyClients from "./components/HappyClients";
 import Hero from "./components/Hero";
+import MobileAppSection from "./components/MobileSection";
 import Options from "./components/Options";
 import ServiceSection from "./components/ServiceSection";
 import StatsSection from "./components/StatSection";
@@ -31,6 +32,7 @@ function App() {
       <BlogSection />
       <TestimonialSection />
       <FAQSection />
+      <MobileAppSection />
       <StatsSection />
       <CTASection />
       <Footer />

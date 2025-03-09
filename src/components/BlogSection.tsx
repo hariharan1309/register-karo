@@ -26,27 +26,33 @@ interface BlogCardProps {
 const TagPill: React.FC<TagPillProps> = ({ text }) => {
   // Generate color based on tag text to keep consistent colors for same tags
   const getColorClass = (): string => {
-    switch (text.toLowerCase().split(" ")[0]) {
+    switch (text.toLowerCase()) {
+      case "tax & audit":
+        return "text-[#6941C6] bg-[#F9F5FF]";
       case "tax":
-        return "text-green-700 bg-green-100";
+        return "text-[#026AA2] bg-[#F0F9FF]";
       case "audit":
-        return "text-purple-700 bg-purple-100";
+        return "text-[#6941C6] bg-[#F9F5FF]";
+      case "money back":
+        return "text-[#3538CD] bg-blue-[#EEF4FF]";
       case "money":
-        return "text-blue-700 bg-blue-100";
+        return "text-[#6941C6] bg-[#F9F5FF]";
       case "management":
-        return "text-indigo-700 bg-indigo-100";
+        return "text-[#363F72] bg-[#F8F9FC]";
+      case "tax return":
+        return "text-[#027A48] bg-[#ECFDF3]";
       case "research":
-        return "text-cyan-700 bg-cyan-100";
+        return "text-[#3538CD] bg-[#EEF4FF]";
       case "complience":
-        return "text-red-700 bg-red-100";
+        return "text-[#C4320A] bg-[#FFF6ED]";
       case "news":
-        return "text-pink-700 bg-pink-100";
-      case "private":
-        return "text-violet-700 bg-violet-100";
-      case "customer":
-        return "text-amber-700 bg-amber-100";
+        return "text-[#C11574] bg-[#FDF2FA]";
+      case "private limited company":
+        return "text-[#6941C6] bg-[#F9F5FF]";
+      case "customer success":
+        return "text-[#363F72] bg-[#F8F9FC]";
       default:
-        return "text-gray-700 bg-gray-100";
+        return "text-[#C01048] bg-[#FFF1F3]";
     }
   };
 
@@ -59,7 +65,7 @@ const TagPill: React.FC<TagPillProps> = ({ text }) => {
 
 const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
   return (
-    <div className="flex flex-col gap-6 h-full *:font-inter transition-all duration-300 hover:shadow-md w-96">
+    <div className="flex flex-col gap-6 h-full *:font-inter transition-all duration-200 w-96">
       <div className="h-60 overflow-hidden">
         <img
           src={blog.image}
@@ -100,7 +106,9 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
           </svg>
         </div>
 
-        <p className="text-[#667085] text-[15px] flex-grow font-normal">{blog.description}</p>
+        <p className="text-[#667085] text-[15px] flex-grow font-normal">
+          {blog.description}
+        </p>
 
         <div className="flex flex-wrap gap-2 mt-auto">
           {blog.tags.map((tag, i) => (
