@@ -1,11 +1,11 @@
-import React, { lazy, Suspense } from "react";
+import { lazy, Suspense } from "react";
 import ContactHeader from "./components/ContactHeader";
 import StickyHeader from "./components/StickyHeader";
 import Hero from "./components/Hero";
 import TrustedBusiness from "./components/TrustedBusiness";
+import ServiceSection from "./components/ServiceSection";
 
 // Dynamically import components that appear below the fold
-const ServiceSection = lazy(() => import("./components/ServiceSection"));
 const AboutSection = lazy(() => import("./components/AboutSection"));
 const WhySection = lazy(() => import("./components/WhySection"));
 const ViewSection = lazy(() => import("./components/ViewSection"));
@@ -27,6 +27,8 @@ function App() {
       <StickyHeader />
       <Hero />
       <TrustedBusiness />
+      <ServiceSection />
+
       <Suspense
         fallback={
           <div role="status" className="min-w-full my-4">
@@ -50,7 +52,6 @@ function App() {
           </div>
         }
       >
-        <ServiceSection />
         <AboutSection />
         <WhySection />
         <ViewSection />
