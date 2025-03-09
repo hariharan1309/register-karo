@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CheckCircle } from "react-feather";
+// import { CheckCircle } from "react-feather";
 
 const CTASection: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -52,7 +52,7 @@ const CTASection: React.FC = () => {
         <div className="flex flex-wrap justify-center gap-8 text-white">
           {features.map((feature, index) => (
             <div key={index} className="flex items-center gap-2">
-              <CheckCircle size={20} className="text-white" />
+              {/* <CheckCircle size={20} className="text-white" /> */}
               <span>{feature}</span>
             </div>
           ))}
