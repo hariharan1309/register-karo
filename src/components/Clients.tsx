@@ -8,10 +8,10 @@ import Img6 from "../assets/clients/zoom.png";
 const Clients = () => {
   const images = [Img1, Img2, Img3, Img4, Img5, Img6];
   return (
-    <div className="p-16 mx-auto">
-      <div className="flex flex-row items-center justify-between">
+    <div className="py-16 px-32 mx-auto">
+      <div className="flex flex-row items-center justify-between h-12">
         {images.map((item, index) => (
-          <img src={item} alt="" key={index} className="h-12 w-36" />
+          <img src={item} alt="" key={index} className="h-12" />
         ))}
       </div>
     </div>

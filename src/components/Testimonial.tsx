@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import Image from "../assets/Testimonial.png";
 // Define the testimonial type
 interface Testimonial {
   id: number;
@@ -50,21 +50,22 @@ const TestimonialSection: React.FC = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const maxIndex = testimonials.length - 2; // Adjust max index to account for showing 2.5 cards
 
   const goToPrevious = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+      prevIndex === 0 ? maxIndex : prevIndex - 1
     );
   };
 
   const goToNext = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+      prevIndex === maxIndex ? 0 : prevIndex + 1
     );
   };
 
   const goToSlide = (slideIndex: number) => {
-    setCurrentIndex(slideIndex);
+    setCurrentIndex(slideIndex > maxIndex ? maxIndex : slideIndex);
   };
 
   // Function to render stars based on rating
@@ -129,20 +130,65 @@ const TestimonialSection: React.FC = () => {
   };
 
   return (
-    <div className="bg-blue-900 py-12 px-4 md:px-8">
+    <div className="bg-blue-900 py-12 px-4 md:px-8 pr-0">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-12">
-          What peoples says about us
-        </h2>
+        <div className="flex flex-row items-center justify-between min-w-full">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-12">
+            What peoples says about us
+          </h2>
+          <div className="flex flex-row items-center gap-2">
+            <button
+              onClick={goToPrevious}
+              className="bg-white rounded-full p-2 shadow-md hover:bg-gray-100 focus:outline-none"
+            >
+              <svg
+                className="w-6 h-6 text-blue-900"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+            <button
+              onClick={goToNext}
+              className="bg-orange-500 rounded-full p-2 shadow-md hover:bg-orange-600 focus:outline-none"
+            >
+              <svg
+                className="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
 
         <div className="relative">
           <div className="overflow-hidden">
             <div
               className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+              style={{
+                transform: `translateX(-${currentIndex * (100 / 2.5)}%)`,
+              }}
             >
               {testimonials.map((testimonial, index) => (
-                <div key={testimonial.id} className="w-full flex-shrink-0 px-2">
+                <div
+                  key={testimonial.id}
+                  className="w-[40%] flex-shrink-0 px-2"
+                >
                   <div className="bg-white rounded-lg p-6 shadow-md min-h-[300px] flex flex-col">
                     <div className="flex justify-between items-start mb-4">
                       <span className="text-gray-500 text-3xl font-serif">
@@ -158,9 +204,7 @@ const TestimonialSection: React.FC = () => {
                     <div className="flex items-center">
                       <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
                         <img
-                          src={`https://randomuser.me/api/portraits/women/${
-                            index + 10
-                          }.jpg`}
+                          src={Image}
                           alt={testimonial.author}
                           className="w-full h-full object-cover"
                         />
@@ -179,44 +223,6 @@ const TestimonialSection: React.FC = () => {
               ))}
             </div>
           </div>
-
-          {/* Navigation arrows */}
-          <button
-            onClick={goToPrevious}
-            className="absolute top-1/2 left-0 transform -translate-y-1/2 -ml-4 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 focus:outline-none"
-          >
-            <svg
-              className="w-6 h-6 text-blue-900"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </button>
-          <button
-            onClick={goToNext}
-            className="absolute top-1/2 right-0 transform -translate-y-1/2 -mr-4 bg-orange-500 rounded-full p-2 shadow-md hover:bg-orange-600 focus:outline-none"
-          >
-            <svg
-              className="w-6 h-6 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
         </div>
 
         {/* Dots navigation */}
