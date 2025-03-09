@@ -1,5 +1,6 @@
 import AboutSection from "./components/AboutSection";
 import BlogSection from "./components/BlogSection";
+import Clients from "./components/Clients";
 import ContactHeader from "./components/ContactHeader";
 import CTASection from "./components/CTASection";
 import Footer from "./components/Footer";
@@ -35,6 +36,7 @@ function App() {
       <MobileAppSection />
       <StatsSection />
       <CTASection />
+      <Clients />
       <Footer />
     </>
   );
