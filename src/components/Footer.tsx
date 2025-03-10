@@ -63,7 +63,11 @@ const Footer: React.FC = () => {
                 matter of minutes.
               </p>
               <div className="flex gap-6">
-                <a href="#" className="text-white hover:text-amber-300">
+                <a
+                  href="#"
+                  className="text-white hover:text-amber-300"
+                  aria-label="Facebook"
+                >
                   <svg
                     width="24"
                     height="24"
@@ -77,7 +81,11 @@ const Footer: React.FC = () => {
                     />
                   </svg>
                 </a>
-                <a href="#" className="text-white hover:text-amber-300">
+                <a
+                  href="#"
+                  className="text-white hover:text-amber-300"
+                  aria-label="Play Store"
+                >
                   <svg
                     width="24"
                     height="24"
@@ -103,7 +111,11 @@ const Footer: React.FC = () => {
                     />
                   </svg>
                 </a>
-                <a href="#" className="text-white hover:text-amber-300">
+                <a
+                  href="#"
+                  className="text-white hover:text-amber-300"
+                  aria-label="App Store"
+                >
                   <svg
                     width="22"
                     height="24"
@@ -117,7 +129,11 @@ const Footer: React.FC = () => {
                     />
                   </svg>
                 </a>
-                <a href="#" className="text-white hover:text-amber-300">
+                <a
+                  href="#"
+                  className="text-white hover:text-amber-300"
+                  aria-label="Instagram"
+                >
                   <svg
                     width="24"
                     height="24"
@@ -160,7 +176,11 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="mt-8 lg:mt-10 pt-4 lg:pt-6 flex flex-col justify-center items-center">
-          <a href="#" className="p-3 rounded-full transition-colors">
+          <a
+            href="#"
+            className="p-3 rounded-full transition-colors"
+            aria-label="To the Top"
+          >
             <svg
               width="48"
               height="48"

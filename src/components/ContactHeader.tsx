@@ -19,9 +19,9 @@ const ContactHeader = () => {
             <p className="text-sm text-white font-inter">www.registerkaro.in</p>
           </div>
         </a>
-        
+
         <div className="hidden sm:block bg-[linear-gradient(0deg,rgba(0,0,0,0)_0%,#D0D0D0_50%,rgba(0,0,0,0)_100%)] h-7 w-[1px]"></div>
-        
+
         <a href="mailto:accounting@registerkaro.in">
           <div className="flex flex-row items-center gap-1">
             <svg
@@ -41,11 +41,14 @@ const ContactHeader = () => {
             <p className="text-sm text-white font-inter">+918447746183</p>
           </div>
         </a>
-        
+
         <div className="hidden sm:block bg-[linear-gradient(0deg,rgba(0,0,0,0)_0%,#D0D0D0_50%,rgba(0,0,0,0)_100%)] h-7 w-[1px]"></div>
-        
+
         <div className="flex flex-row gap-3 items-center">
-          <a href="https://m.facebook.com/profile.php?id=100067890646061&_rdr">
+          <a
+            href="https://m.facebook.com/profile.php?id=100067890646061&_rdr"
+            aria-label="Facebook"
+          >
             <svg
               width="18"
               height="18"
@@ -64,7 +67,8 @@ const ContactHeader = () => {
               />
             </svg>
           </a>
-          <a href="https://www.instagram.com/registerkaro_/">
+          <a href="https://www.instagram.com/registerkaro_/"
+          aria-label="Instagram">
             <svg
               width="18"
               height="18"
@@ -80,7 +84,7 @@ const ContactHeader = () => {
               />
             </svg>
           </a>
-          <a href="https://mobile.twitter.com/registerkaro">
+          <a href="https://mobile.twitter.com/registerkaro" aria-label="Twitter/X">
             <svg
               width="19"
               height="16"
@@ -94,7 +98,7 @@ const ContactHeader = () => {
               />
             </svg>
           </a>
-          <a href="https://in.linkedin.com/company/registerkaro">
+          <a href="https://in.linkedin.com/company/registerkaro" aria-label="Pinterest">
             <svg
               width="18"
               height="18"

@@ -46,6 +46,7 @@ const AboutSection = () => {
       <div className="flex flex-1 items-center justify-center md:mt-8 lg:mt-0 lg:pl-8">
         <img
           src={PeopleImage}
+          
           alt=""
           className="w-full max-w-[584px]"
           loading="lazy"

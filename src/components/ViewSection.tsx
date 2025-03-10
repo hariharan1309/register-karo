@@ -14,11 +14,11 @@ const ViewSection = () => {
               0ur Video Introductions
             </h1>
             <p className="text-sm md:text-base text-[#AAB5CD]">
-              Velit purus egestas tellus phasellus. Mattis eget sed faucibus
-              magna vulputate pellentesque a diam tincidunt apis dui.
+              Velit purus egestas tellus phasellus. Mattis eget sed faucibus magna
+              vulputate pellentesque a diam tincidunt apis dui.
             </p>
           </div>
-
+          
           {/* Features section */}
           <div className="grid grid-cols-1 gap-4 md:gap-6">
             {/* Feature 1 */}
@@ -124,12 +124,12 @@ const ViewSection = () => {
                   Explore ideas together
                 </h5>
                 <p className="text-sm md:text-base text-[#AAB5CD]">
-                  Engage audience segments and finally create actionable
-                  insights. Amplify vertical integration.
+                  Engage audience segments and finally create actionable insights.
+                  Amplify vertical integration.
                 </p>
               </div>
             </div>
-
+            
             {/* Feature 2 */}
             <div className="flex flex-row items-start gap-2">
               <svg
@@ -233,26 +233,24 @@ const ViewSection = () => {
                   Bring those ideas to life
                 </h5>
                 <p className="text-sm md:text-base text-[#AAB5CD]">
-                  Engage audience segments and finally create actionable
-                  insights. Amplify vertical integration.
+                  Engage audience segments and finally create actionable insights.
+                  Amplify vertical integration.
                 </p>
               </div>
             </div>
           </div>
         </div>
-
+        
         {/* Video container - full width on mobile, half width on lg screens */}
         <div className="relative w-full h-[280px] sm:h-[320px] md:h-[360px] lg:h-[420px]">
-          <img
-            src={Video}
-            alt="Video thumbnail"
-            className="w-full h-full object-cover"
-            loading="lazy"
+          <img 
+            src={Video} 
+            alt="Video thumbnail" 
+            className="w-full h-full object-cover" 
           />
           <img
             src={Yt}
             alt="YouTube play button"
-            loading="lazy"
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[100px] sm:w-[120px] md:w-[140px] lg:w-[154px]"
           />
           <div className="absolute w-full h-full inset-0 rounded-t-xl bg-gradient-to-b from-[rgba(20,120,241,0.35)] from-[45.74%] to-black to-[92.94%]"></div>
