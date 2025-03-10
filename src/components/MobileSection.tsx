@@ -10,11 +10,13 @@ const MobileAppSection: React.FC = () => {
           src={Phone}
           alt=""
           className="absolute top-1/5 w-[660px] h-[820px] left-2/5"
+          loading="lazy"
         />
         <img
           src={Phone}
           alt=""
           className="absolute -top-24 w-[650px] h-[820px] left-2/3"
+          loading="lazy"
         />
       </div>
 
@@ -36,6 +38,7 @@ const MobileAppSection: React.FC = () => {
             <img
               src={Phone}
               alt="Mobile app"
+              loading="lazy"
               className="w-[280px] h-[350px] md:w-[320px] md:h-[400px]"
             />
           </div>

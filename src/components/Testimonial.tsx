@@ -245,6 +245,7 @@ const TestimonialSection: React.FC = () => {
                         <img
                           src={Image}
                           alt={testimonial.author}
+                          loading="lazy"
                           className="w-full h-full object-cover"
                         />
                       </div>

@@ -14,7 +14,7 @@ const HappyClients = () => {
         </p>
       </div>
       <div className="px-2 sm:px-4 lg:px-0">
-        <img src={Clients} alt="Happy Clients" className="w-full" />
+        <img src={Clients} alt="Happy Clients" className="w-full" loading="lazy" />
       </div>
       <button className="place-self-center flex flex-row gap-1 sm:gap-1.5 items-center text-[#1C4670] mt-3 sm:mt-4">
         <p className="text-sm sm:text-base font-semibold">Show more</p>
