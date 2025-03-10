@@ -143,14 +143,18 @@ const Options = () => {
       ),
     },
   ];
+
   return (
-    <div className="bg-[#FFA229] px-[68px] py-14">
-      <div className="flex flex-row justify-evenly">
+    <div className="bg-[#FFA229] px-4 sm:px-8 md:px-12 lg:px-[68px] py-8 lg:py-14">
+      <div className="flex flex-col sm:grid sm:grid-cols-2 lg:flex lg:flex-row justify-evenly gap-6 sm:gap-8">
         {options.map((option, index) => (
-          <div key={index} className="flex flex-row gap-4 items-center relative">
+          <div
+            key={index}
+            className="flex flex-row gap-4 items-center relative"
+          >
             {option.icon}
             <div className="absolute left-3.5">{option.icon2}</div>
-            <p className="font-semibold text-[#3C2109] font-inter text-[18px]">
+            <p className="font-semibold text-[#3C2109] font-inter text-base lg:text-[18px]">
               {option.name}
             </p>
           </div>

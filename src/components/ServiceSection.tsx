@@ -45,22 +45,22 @@ const ServiceSection = () => {
     },
   ];
   return (
-    <div className="py-10 px-18 bg-[#FAFAFA] grid grid-cols-1 ">
-      <div className="grid grid-cols-1 gap-4">
-        <p className="text-[#EB8D15] font-inter place-self-center m-1 tracking-[1.5px]">
+    <div className="py-6 sm:py-8 lg:py-10 px-4 sm:px-8 lg:px-18 bg-[#FAFAFA] grid grid-cols-1">
+      <div className="grid grid-cols-1 gap-3 sm:gap-4">
+        <p className="text-[#EB8D15] font-inter place-self-center m-1 tracking-[1.5px] text-sm sm:text-base">
           WELCOME TO REGISTERKARO.IN
         </p>
-        <h2 className="text-[#272D37] font-bold text-[32px] place-self-center tracking-[.16px]">
+        <h2 className="text-[#272D37] font-bold text-xl sm:text-2xl md:text-3xl lg:text-[32px] place-self-center tracking-[.16px] text-center px-4">
           Explore Our Services
         </h2>
-        <div className="grid grid-cols-3 gap-6 gap-y-8 p-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-y-6 lg:gap-6 lg:gap-y-8 p-2 sm:p-3 lg:p-4">
           {/* ServiceCard */}
           {services.map((service, index) => (
             <ServiceCard params={service} key={index} index={index} />
           ))}
         </div>
       </div>
-      <button className="font-inter text-base p-3 px-5 flex items-center justify-center place-self-center font-medium text-white bg-[#1C4670] rounded ">
+      <button className="font-inter text-sm sm:text-base p-2 sm:p-3 px-4 sm:px-5 flex items-center justify-center place-self-center font-medium text-white bg-[#1C4670] rounded mt-6 sm:mt-8 lg:mt-10">
         See All Services
       </button>
     </div>

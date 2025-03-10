@@ -50,7 +50,23 @@ const TestimonialSection: React.FC = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const maxIndex = testimonials.length - 2; // Adjust max index to account for showing 2.5 cards
+  // Dynamic max index based on screen size
+  const getMaxIndex = () => {
+    // We'll use window.innerWidth in a real implementation
+    // For this example, we're basing it on a className check that would be added by Tailwind's responsive classes
+    const isMobile = window.innerWidth < 768; // md breakpoint
+    const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024; // lg breakpoint
+    
+    if (isMobile) {
+      return testimonials.length - 1; // Show 1 card on mobile
+    } else if (isTablet) {
+      return testimonials.length - 1.5; // Show 1.5 cards on tablet
+    } else {
+      return testimonials.length - 2.5; // Original: show 2.5 cards on desktop
+    }
+  };
+
+  const maxIndex = getMaxIndex();
 
   const goToPrevious = () => {
     setCurrentIndex((prevIndex) =>
@@ -79,7 +95,7 @@ const TestimonialSection: React.FC = () => {
       stars.push(
         <svg
           key={`full-${i}`}
-          className="w-5 h-5 text-yellow-400"
+          className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400"
           fill="currentColor"
           viewBox="0 0 20 20"
         >
@@ -93,7 +109,7 @@ const TestimonialSection: React.FC = () => {
       stars.push(
         <svg
           key="half"
-          className="w-5 h-5 text-yellow-400"
+          className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400"
           fill="currentColor"
           viewBox="0 0 20 20"
         >
@@ -117,7 +133,7 @@ const TestimonialSection: React.FC = () => {
       stars.push(
         <svg
           key={`empty-${i}`}
-          className="w-5 h-5 text-gray-300"
+          className="w-4 h-4 sm:w-5 sm:h-5 text-gray-300"
           fill="currentColor"
           viewBox="0 0 20 20"
         >
@@ -129,20 +145,43 @@ const TestimonialSection: React.FC = () => {
     return stars;
   };
 
+  // Function to get the correct width percentage based on screen size
+  const getCardWidth = () => {
+    return {
+      xs: "w-full", // 100% on small screens
+      sm: "w-[85%]", // 85% on small-medium screens
+      md: "w-[70%]", // 70% on medium screens
+      lg: "w-[40%]", // 40% on large screens (original)
+    };
+  };
+
+  // Function to get translation percentage based on screen size
+  const getTranslationPercentage = () => {
+    if (window.innerWidth < 640) { // sm breakpoint
+      return currentIndex * 100; // Full card width
+    } else if (window.innerWidth < 768) { // md breakpoint
+      return currentIndex * 85; // 85% card width
+    } else if (window.innerWidth < 1024) { // lg breakpoint
+      return currentIndex * 70; // 70% card width
+    } else {
+      return currentIndex * (100 / 2.5); // Original desktop calculation
+    }
+  };
+
   return (
-    <div className="bg-[#1C4670] py-12 px-4 md:px-8 pr-0">
+    <div className="bg-[#1C4670] py-8 sm:py-10 md:py-12 px-4 md:px-8 pr-0">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-row items-center justify-between min-w-full">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-12">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 sm:mb-8 md:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-0">
             What peoples says about us
           </h2>
           <div className="flex flex-row items-center gap-2">
             <button
               onClick={goToPrevious}
-              className="bg-white rounded-full p-2 shadow-md hover:bg-gray-100 focus:outline-none"
+              className="bg-white rounded-full p-1.5 sm:p-2 shadow-md hover:bg-gray-100 focus:outline-none"
             >
               <svg
-                className="w-6 h-6 text-blue-900"
+                className="w-4 h-4 sm:w-6 sm:h-6 text-blue-900"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -157,10 +196,10 @@ const TestimonialSection: React.FC = () => {
             </button>
             <button
               onClick={goToNext}
-              className="bg-orange-500 rounded-full p-2 shadow-md hover:bg-orange-600 focus:outline-none"
+              className="bg-orange-500 rounded-full p-1.5 sm:p-2 shadow-md hover:bg-orange-600 focus:outline-none"
             >
               <svg
-                className="w-6 h-6 text-white"
+                className="w-4 h-4 sm:w-6 sm:h-6 text-white"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -181,28 +220,28 @@ const TestimonialSection: React.FC = () => {
             <div
               className="flex transition-transform duration-500 ease-in-out"
               style={{
-                transform: `translateX(-${currentIndex * (100 / 2.5)}%)`,
+                transform: `translateX(-${getTranslationPercentage()}%)`,
               }}
             >
-              {testimonials.map((testimonial,) => (
+              {testimonials.map((testimonial) => (
                 <div
                   key={testimonial.id}
-                  className="w-[40%] flex-shrink-0 px-2"
+                  className={`${getCardWidth().xs} sm:${getCardWidth().sm} md:${getCardWidth().md} lg:${getCardWidth().lg} flex-shrink-0 px-1 sm:px-2`}
                 >
-                  <div className="bg-white rounded-lg p-6 shadow-md min-h-[300px] flex flex-col">
-                    <div className="flex justify-between items-start mb-4">
-                      <span className="text-gray-500 text-3xl font-serif">
+                  <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md min-h-[250px] sm:min-h-[300px] flex flex-col">
+                    <div className="flex justify-between items-start mb-3 sm:mb-4">
+                      <span className="text-gray-500 text-2xl sm:text-3xl font-serif">
                         "
                       </span>
                       <div className="flex">
                         {renderStars(testimonial.rating)}
                       </div>
                     </div>
-                    <p className="text-gray-600 mb-6 flex-grow">
+                    <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 flex-grow line-clamp-5 sm:line-clamp-none">
                       {testimonial.text}
                     </p>
                     <div className="flex items-center">
-                      <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4">
                         <img
                           src={Image}
                           alt={testimonial.author}
@@ -210,10 +249,10 @@ const TestimonialSection: React.FC = () => {
                         />
                       </div>
                       <div>
-                        <h4 className="font-bold text-gray-800">
+                        <h4 className="font-bold text-gray-800 text-sm sm:text-base">
                           {testimonial.author}
                         </h4>
-                        <p className="text-gray-600 text-sm">
+                        <p className="text-gray-600 text-xs sm:text-sm">
                           {testimonial.position}
                         </p>
                       </div>
@@ -226,12 +265,12 @@ const TestimonialSection: React.FC = () => {
         </div>
 
         {/* Dots navigation */}
-        <div className="flex justify-center mt-8 space-x-2">
+        <div className="flex justify-center mt-4 sm:mt-6 md:mt-8 space-x-1 sm:space-x-2">
           {testimonials.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-2 h-2 rounded-full ${
+              className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full ${
                 currentIndex === index ? "bg-orange-500" : "bg-white/50"
               }`}
               aria-label={`Go to slide ${index + 1}`}

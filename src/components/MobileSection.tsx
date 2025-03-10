@@ -1,26 +1,51 @@
 import React from "react";
 import Phone from "../assets/Phone1.png";
+
 const MobileAppSection: React.FC = () => {
   return (
     <div className="bg-[#1C4670] py-16 px-4 md:px-8 lg:px-16 relative overflow-hidden *:font-inter">
-      <div className="flex flex-row">
-        <div className="max-w-[500px] mb-8">
-          <h2 className="text-[32px] font-[750] leading-10 text-white mb-6">
+      {/* Mobile phone images - hidden on small/medium screens, visible on large */}
+      <div className="hidden lg:block">
+        <img
+          src={Phone}
+          alt=""
+          className="absolute top-1/5 w-[660px] h-[820px] left-2/5"
+        />
+        <img
+          src={Phone}
+          alt=""
+          className="absolute -top-24 w-[650px] h-[820px] left-2/3"
+        />
+      </div>
+
+      {/* Content section */}
+      <div className="flex flex-col lg:flex-row">
+        <div className="w-full lg:max-w-[500px] mb-8">
+          <h2 className="text-[28px] md:text-[32px] font-[750] leading-9 md:leading-10 text-white mb-4 md:mb-6 text-center lg:text-left">
             Manage Your Services by your Mobile Phone
           </h2>
 
-          <p className="text-[#AAB5CD] mb-12 leading-[26px]">
+          <p className="text-[#AAB5CD] mb-8 md:mb-12 leading-[26px] text-center lg:text-left">
             Download our app to manage and track your services. Our app enables
             you to stay in touch with our experts and aids you in tracking your
             progress.
           </p>
 
+          {/* Mobile image for small/medium screens only */}
+          <div className="flex justify-center mb-8 md:mb-10 lg:hidden">
+            <img
+              src={Phone}
+              alt="Mobile app"
+              className="w-[280px] h-[350px] md:w-[320px] md:h-[400px]"
+            />
+          </div>
+
           <div className="space-y-4">
-            <h3 className="text-white text-[15px] font-medium mb-4">
+            <h3 className="text-white text-[15px] font-medium mb-4 text-center lg:text-left">
               Get the App
             </h3>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
               <a
                 href="#"
                 className="flex items-center bg-white rounded border border-[#A5C937] p-4 py-3 transition"
@@ -92,16 +117,6 @@ const MobileAppSection: React.FC = () => {
           </div>
         </div>
       </div>
-      <img
-        src={Phone}
-        alt=""
-        className="absolute top-1/5 w-[660px] h-[820px] left-2/5"
-      />
-      <img
-        src={Phone}
-        alt=""
-        className="absolute -top-24 w-[650px] h-[820px] left-2/3"
-      />
     </div>
   );
 };

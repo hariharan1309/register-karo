@@ -1,7 +1,7 @@
 const ContactHeader = () => {
   return (
-    <div className="min-w-full bg-[#1C4670] grid h-11 items-center ">
-      <div className="flex w-full justify-end items-center gap-6 pr-12">
+    <div className="min-w-full bg-[#1C4670] grid h-auto md:h-11 items-center py-2 md:py-0">
+      <div className="flex w-full flex-col sm:flex-row justify-center sm:justify-end items-center gap-3 sm:gap-4 md:gap-6 px-4 sm:px-8 md:pr-12">
         <a href="mailto:accounting@registerkaro.in">
           <div className="flex flex-row items-center gap-1">
             <svg
@@ -19,7 +19,9 @@ const ContactHeader = () => {
             <p className="text-sm text-white font-inter">www.registerkaro.in</p>
           </div>
         </a>
-        <div className="bg-[linear-gradient(0deg,rgba(0,0,0,0)_0%,#D0D0D0_50%,rgba(0,0,0,0)_100%)] h-7 w-[1px]"></div>
+        
+        <div className="hidden sm:block bg-[linear-gradient(0deg,rgba(0,0,0,0)_0%,#D0D0D0_50%,rgba(0,0,0,0)_100%)] h-7 w-[1px]"></div>
+        
         <a href="mailto:accounting@registerkaro.in">
           <div className="flex flex-row items-center gap-1">
             <svg
@@ -39,7 +41,9 @@ const ContactHeader = () => {
             <p className="text-sm text-white font-inter">+918447746183</p>
           </div>
         </a>
-        <div className="bg-[linear-gradient(0deg,rgba(0,0,0,0)_0%,#D0D0D0_50%,rgba(0,0,0,0)_100%)] h-7 w-[1px]"></div>
+        
+        <div className="hidden sm:block bg-[linear-gradient(0deg,rgba(0,0,0,0)_0%,#D0D0D0_50%,rgba(0,0,0,0)_100%)] h-7 w-[1px]"></div>
+        
         <div className="flex flex-row gap-3 items-center">
           <a href="https://m.facebook.com/profile.php?id=100067890646061&_rdr">
             <svg

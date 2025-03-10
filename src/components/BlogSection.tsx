@@ -1,5 +1,4 @@
 import Img1 from "../assets/blog/B1.png";
-
 import Img2 from "../assets/blog/B2.png";
 import Img4 from "../assets/blog/B4.png";
 import Img5 from "../assets/blog/B5.png";
@@ -65,8 +64,8 @@ const TagPill: React.FC<TagPillProps> = ({ text }) => {
 
 const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
   return (
-    <div className="flex flex-col gap-6 h-full *:font-inter transition-all duration-200 w-96">
-      <div className="h-60 overflow-hidden">
+    <div className="flex flex-col gap-6 h-full *:font-inter transition-all duration-200 w-full sm:max-w-[340px] md:max-w-[360px] lg:w-96">
+      <div className="h-48 sm:h-52 md:h-56 lg:h-60 overflow-hidden">
         <img
           src={blog.image}
           alt={blog.title}
@@ -74,8 +73,8 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
         />
       </div>
 
-      <div className="flex flex-col gap-6 flex-grow font-semibold">
-        <div className=" flex items-center text-[#667085] text-sm">
+      <div className="flex flex-col gap-4 md:gap-6 flex-grow font-semibold">
+        <div className="flex items-center text-[#667085] text-xs sm:text-sm">
           <span>{blog.author}</span>
           <span className="mx-1">•</span>
           <span>{blog.date}</span>
@@ -88,25 +87,28 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
         </div>
 
         <div className="flex justify-between items-start">
-          <h3 className="text-[22px] font-bold text-[#1A1A1A]">{blog.title}</h3>
+          <h3 className="text-lg sm:text-xl lg:text-[22px] font-bold text-[#1A1A1A]">
+            {blog.title}
+          </h3>
           <svg
-            width="24"
-            height="24"
+            width="20"
+            height="20"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            className="sm:w-6 sm:h-6 lg:w-6 lg:h-6"
           >
             <path
               d="M7 17L17 7M17 7H7M17 7V17"
               stroke="#1A1A1A"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </div>
 
-        <p className="text-[#667085] text-[15px] flex-grow font-normal">
+        <p className="text-[#667085] text-sm sm:text-[14px] lg:text-[15px] flex-grow font-normal">
           {blog.description}
         </p>
 
@@ -180,17 +182,17 @@ const BlogSection: React.FC = () => {
   ];
 
   return (
-    <div className="p-14 bg-gray-50">
-      <div className="grid grid-cols-1 gap-4 mb-10">
-        <p className="text-[#EB8D15] font-inter place-self-center m-1 tracking-[1.5px] uppercase font-medium">
+    <div className="px-4 py-8 sm:p-8 md:p-10 lg:p-14 bg-gray-50">
+      <div className="grid grid-cols-1 gap-3 sm:gap-4 mb-6 sm:mb-8 lg:mb-10">
+        <p className="text-[#EB8D15] font-inter place-self-center m-1 tracking-[1.5px] uppercase font-medium text-sm sm:text-base">
           EXPLORE OUR BLOGS
         </p>
-        <h2 className="text-[#272D37] font-bold text-[32px] place-self-center tracking-[.16px] text-center max-w-2xl mx-auto">
+        <h2 className="text-[#272D37] font-bold text-2xl sm:text-[28px] lg:text-[32px] place-self-center tracking-[.16px] text-center max-w-2xl mx-auto">
           Accelerate Digital Transformation
         </h2>
       </div>
 
-      <div className="grid grid-cols-3 *:place-self-center gap-8 p-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 *:place-self-center gap-6 sm:gap-6 md:gap-7 lg:gap-8 p-2 sm:p-4 md:p-6 lg:p-8">
         {blogs.map((blog, index) => (
           <BlogCard key={index} blog={blog} />
         ))}

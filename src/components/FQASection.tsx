@@ -41,25 +41,27 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <div className="py-10 px-4 max-w-7xl mx-auto bg-[#FAFAFA]">
-      <div className="text-center mb-12">
-        <p className="text-[#F5921E] font-medium mb-2">FAQ</p>
-        <h2 className="text-4xl font-bold text-[#3A2A0E]">
+    <div className="py-6 sm:py-8 lg:py-10 px-3 sm:px-4 max-w-7xl mx-auto bg-[#FAFAFA]">
+      <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+        <p className="text-[#F5921E] font-medium mb-1 sm:mb-2">FAQ</p>
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#3A2A0E]">
           Frequent Ask Questions
         </h2>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-3 sm:space-y-4">
         {faqs.map((faq, index) => (
           <div
             key={index}
             className="border border-gray-200 rounded-lg overflow-hidden shadow-sm transition-all duration-300"
           >
             <div
-              className="flex items-center flex-row min-w-full "
+              className="flex items-center flex-row min-w-full"
               onClick={() => toggleFAQ(index)}
             >
+              {/* Left colored bar - hidden on mobile, visible on sm and up */}
               <svg
+                className="hidden sm:block"
                 width="7"
                 height="69"
                 viewBox="0 0 7 69"
@@ -82,17 +84,19 @@ const FAQSection: React.FC = () => {
                     y2="69"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop stop-color="#FFA229" />
-                    <stop offset="0.848958" stop-color="#1C4670" />
+                    <stop stopColor="#FFA229" />
+                    <stop offset="0.848958" stopColor="#1C4670" />
                   </linearGradient>
                 </defs>
               </svg>
-              <div className="flex justify-between items-center p-5 cursor-pointer w-full">
-                <h3 className="text-lg font-medium text-gray-800">
+              {/* Mobile-friendly colored indicator */}
+              <div className="block sm:hidden w-1 h-full bg-gradient-to-b from-[#FFA229] to-[#1C4670]"></div>
+              <div className="flex justify-between items-center p-3 sm:p-4 lg:p-5 cursor-pointer w-full">
+                <h3 className="text-base sm:text-lg font-medium text-gray-800 pr-2">
                   {faq.question}
                 </h3>
                 <div
-                  className={`transition-transform duration-300 ${
+                  className={`transition-transform duration-300 flex-shrink-0 ${
                     openIndex === index ? "rotate-90" : ""
                   }`}
                 >
@@ -103,10 +107,10 @@ const FAQSection: React.FC = () => {
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <g clip-path="url(#clip0_1_22278)">
+                    <g clipPath="url(#clip0_1_22278)">
                       <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
+                        fillRule="evenodd"
+                        clipRule="evenodd"
                         d="M11.9 9L10.9 8L3.90002 1H2.90002L1.90002 2V4L7.90002 9L1.90002 15V16L2.90002 17H3.90002L10.9 10L11.9 9Z"
                         fill="#555555"
                       />
@@ -127,18 +131,18 @@ const FAQSection: React.FC = () => {
             </div>
 
             {openIndex === index && (
-              <div className="p-5 pt-0 border-t border-gray-200 bg-gray-50">
-                <p className="text-gray-600">{faq.answer}</p>
+              <div className="p-3 sm:p-4 lg:p-5 pt-0 border-t border-gray-200 bg-gray-50">
+                <p className="text-sm sm:text-base text-gray-600">{faq.answer}</p>
               </div>
             )}
           </div>
         ))}
       </div>
 
-      <div className="flex flex-row items-center justify-center w-full mt-4">
-        <button className="font-inter text-base p-3 px-4 my-2 text-white bg-[#1C4670] rounded ">
-          <div className="flex flex-row gap-3 items-center">
-            <p className=" text-base font-semibold text-white">Show More</p>
+      <div className="flex flex-row items-center justify-center w-full mt-4 sm:mt-6">
+        <button className="font-inter text-sm sm:text-base p-2 sm:p-3 px-3 sm:px-4 my-2 text-white bg-[#1C4670] rounded">
+          <div className="flex flex-row gap-2 sm:gap-3 items-center">
+            <p className="text-sm sm:text-base font-semibold text-white">Show More</p>
             <svg
               width="14"
               height="12"
@@ -149,8 +153,8 @@ const FAQSection: React.FC = () => {
               <path
                 d="M1.66667 6H12.5M8.33333 1L12.7441 5.41074C13.0695 5.73618 13.0695 6.26382 12.7441 6.58926L8.33333 11"
                 stroke="white"
-                stroke-width="1.67"
-                stroke-linecap="round"
+                strokeWidth="1.67"
+                strokeLinecap="round"
               />
             </svg>
           </div>

@@ -62,7 +62,6 @@ const WhySection = () => {
         "We ensure that you stay 100% satisfied with our offered services",
     },
     {
-      //   icon: icon1,
       color: "#FBF1FB",
       icon: (
         <svg
@@ -102,26 +101,44 @@ const WhySection = () => {
     },
   ];
   return (
-    <div className="grid grid-cols-4 gap-6 p-16 *:font-inter relative">
-      <div className="col-span-2 flex flex-col gap-3">
+    <div className="p-4 sm:p-8 lg:p-16 *:font-inter relative">
+      {/* Header Section - Full width on all screens */}
+      <div className="w-full mb-8 lg:mb-0 lg:col-span-2 flex flex-col gap-3">
         <p className="text-[#EB8D15] font-inter tracking-[1.5px]">
           WELCOME TO REGISTERKARO.IN
         </p>
-        <h3 className="text-[32px] font-bold text-[#272D37]">
+        <h3 className="text-[28px] lg:text-[32px] font-bold text-[#272D37]">
           Why Choose Register Karo{" "}
         </h3>
-        <p className="text-[15px] text-[#0D1216] leading-[22px] max-w-[590px]">
+        <p className="text-[14px] lg:text-[15px] text-[#0D1216] leading-[22px] max-w-[590px]">
           It is with consistent services and results that build trust with the
           people and that in turn help us to serve the business better.
         </p>
       </div>
-      <WhyCard params={reasons[0]} key={reasons[0].title} />
-      <WhyCard params={reasons[1]} key={reasons[1].title} />
-      <div className="col-start-2">
-        <WhyCard params={reasons[2]} key={reasons[2].title} />
+
+      {/* Cards Section - Responsive Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 mt-6">
+        {/* First row on large screens */}
+        <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 lg:gap-6">
+          <WhyCard params={reasons[0]} key={reasons[0].title} />
+          <WhyCard params={reasons[1]} key={reasons[1].title} />
+        </div>
+
+        {/* Second row on large screens */}
+        <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 lg:gap-6">
+          <div className="lg:col-start-1">
+            <WhyCard params={reasons[2]} key={reasons[2].title} />
+          </div>
+          <WhyCard params={reasons[3]} key={reasons[3].title} />
+        </div>
+
+        {/* Third row - only shows the fifth card in center on small/medium screens */}
+        <div className="sm:col-span-2 lg:col-span-4 flex justify-center lg:justify-start">
+          <div className="max-w-xs sm:max-w-sm lg:max-w-none lg:w-1/4">
+            <WhyCard params={reasons[4]} key={reasons[4].title} />
+          </div>
+        </div>
       </div>
-      <WhyCard params={reasons[3]} key={reasons[3].title} />
-      <WhyCard params={reasons[4]} key={reasons[4].title} />
     </div>
   );
 };

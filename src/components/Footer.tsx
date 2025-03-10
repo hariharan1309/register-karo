@@ -53,10 +53,10 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-[#00205C] text-white py-16 px-24 *:font-inter">
-      <div className=" mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-          <div className="md:col-span-1">
+    <footer className="bg-[#00205C] text-white py-8 sm:py-12 lg:py-16 px-4 sm:px-8 md:px-12 lg:px-24 *:font-inter">
+      <div className="mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8">
+          <div className="md:col-span-1 lg:col-span-1">
             <div className="mb-6">
               <p className="text-[#AAB5CD] text-base font-medium mb-4">
                 Design outstanding interfaces with advanced Figma features in a
@@ -159,13 +159,14 @@ const Footer: React.FC = () => {
           ))}
         </div>
 
-        <div className="mt-10 pt-6 flex flex-col justify-center items-center">
-          <a href="#" className=" p-3 rounded-full  transition-colors">
+        <div className="mt-8 lg:mt-10 pt-4 lg:pt-6 flex flex-col justify-center items-center">
+          <a href="#" className="p-3 rounded-full transition-colors">
             <svg
-              width="56"
-              height="56"
+              width="48"
+              height="48"
               viewBox="0 0 56 56"
               fill="none"
+              className="sm:w-[52px] sm:h-[52px] lg:w-[56px] lg:h-[56px]"
               xmlns="http://www.w3.org/2000/svg"
             >
               <rect width="56" height="56" rx="28" fill="#FFA229" />
@@ -177,7 +178,7 @@ const Footer: React.FC = () => {
               />
             </svg>
           </a>
-          <p className="text-base text-[#AAB5CD] font-medium mb-4 md:mb-0">
+          <p className="text-sm sm:text-base text-[#AAB5CD] font-medium text-center mt-3 mb-4 md:mb-0">
             © 2024 Registerkaro. All Rights Reserved.
           </p>
         </div>
