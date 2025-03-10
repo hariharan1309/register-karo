@@ -189,7 +189,7 @@ const TestimonialSection: React.FC = () => {
               {testimonials.map((testimonial,) => (
                 <div
                   key={testimonial.id}
-                  className="w-[40%] flex-shrink-0 px-2"
+                  className="w-full sm:w-[50%] lg:w-[40%] flex-shrink-0 px-2"
                 >
                   <div className="bg-white rounded-lg p-6 shadow-md min-h-[300px] flex flex-col">
                     <div className="flex justify-between items-start mb-4">
@@ -209,6 +209,7 @@ const TestimonialSection: React.FC = () => {
                           src={Image}
                           alt={testimonial.author}
                           className="w-full h-full object-cover"
+                          loading="lazy"
                         />
                       </div>
                       <div>

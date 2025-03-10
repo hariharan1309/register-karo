@@ -17,6 +17,7 @@ const Clients = () => {
               src={item}
               alt={`Client logo ${index + 1}`}
               className="h-8 sm:h-10 md:h-12 object-contain"
+              loading="lazy"
             />
           </div>
         ))}

@@ -1,7 +1,7 @@
 const ContactHeader = () => {
   return (
     <div className="min-w-full bg-[#1C4670] grid h-auto md:h-11 items-center py-2 md:py-0">
-      <div className="flex w-full flex-col sm:flex-row justify-center sm:justify-end items-center gap-3 sm:gap-4 md:gap-6 px-4 sm:px-8 md:pr-12">
+      <div className="flex w-full flex-row  flex-wrap sm:flex-nowrap justify-center sm:justify-end items-center gap-3 sm:gap-4 md:gap-6 px-4 sm:px-8 md:pr-12">
         <a href="mailto:accounting@registerkaro.in">
           <div className="flex flex-row items-center gap-1">
             <svg

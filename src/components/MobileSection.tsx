@@ -39,7 +39,7 @@ const MobileAppSection: React.FC = () => {
               src={Phone}
               alt="Mobile app"
               loading="lazy"
-              className="w-[280px] h-[350px] md:w-[320px] md:h-[400px]"
+              className="w-[300px] h-[360px] md:w-[360px] md:h-[480px]"
             />
           </div>
 
@@ -48,7 +48,7 @@ const MobileAppSection: React.FC = () => {
               Get the App
             </h3>
 
-            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+            <div className="flex flex-row justify-center lg:justify-start gap-4">
               <a
                 href="#"
                 className="flex items-center bg-white rounded border border-[#A5C937] p-4 py-3 transition"

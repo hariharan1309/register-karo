@@ -28,6 +28,7 @@ const TrustedBusiness = () => {
               key={index} 
               src={logo.src} 
               alt={logo.alt} 
+              loading="lazy"
               className="w-[100px] sm:w-[120px] md:w-[130px] flex-shrink-0" 
             />
           ))}
@@ -42,6 +43,7 @@ const TrustedBusiness = () => {
             src={logo.src} 
             alt={logo.alt} 
             className="w-[138px]" 
+            loading="lazy"
           />
         ))}
       </div>

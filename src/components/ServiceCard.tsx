@@ -45,7 +45,7 @@ const ServiceCard = ({ params, index }: { params: any; index: number }) => {
       )}
       {index % 2 !== 0 && (
         <div
-          className={`absolute bg-[#BB162B] h-5 w-1 left-[-2px] sm:block md:block lg:hidden ${
+          className={`absolute bg-[#BB162B] h-5 w-1 left-[-2px] hidden md:block lg:hidden ${
             index % 2 == 1 ? "top-1/3" : "top-2/3"
           }`}
         ></div>
