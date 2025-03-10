@@ -247,10 +247,12 @@ const ViewSection = () => {
             src={Video} 
             alt="Video thumbnail" 
             className="w-full h-full object-cover" 
+            loading="lazy"
           />
           <img
             src={Yt}
             alt="YouTube play button"
+            loading="lazy"
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[100px] sm:w-[120px] md:w-[140px] lg:w-[154px]"
           />
           <div className="absolute w-full h-full inset-0 rounded-t-xl bg-gradient-to-b from-[rgba(20,120,241,0.35)] from-[45.74%] to-black to-[92.94%]"></div>

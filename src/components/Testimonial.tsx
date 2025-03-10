@@ -233,7 +233,7 @@ const TestimonialSection: React.FC = () => {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-2 h-2 rounded-full ${
+              className={`w-2.5 h-2.5 rounded-full ${
                 currentIndex === index ? "bg-orange-500" : "bg-white/50"
               }`}
               aria-label={`Go to slide ${index + 1}`}
